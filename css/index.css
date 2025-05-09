@@ -1,0 +1,98 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  background-color: #003366;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* CONTENEDOR */
+.contenedor-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO */
+.logo img {
+  height: 60px;
+}
+
+/* MENÚ NORMAL (escritorio) */
+.menu {
+  margin-left: auto;
+  margin-right: -30px; /* ← Menú más a la derecha */
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ------------------------------
+   RESPONSIVE (tablets y móviles)
+--------------------------------*/
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #003366;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .menu.mostrar {
+    display: block;
+  }
+
+  .menu {
+    margin-left: 0;
+  }
+}
