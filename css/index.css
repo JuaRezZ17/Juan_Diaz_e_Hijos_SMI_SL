@@ -105,23 +105,8 @@ header {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
-  position: relative;
 }
 
-/* LÍNEA VERTICAL CENTRAL (más gruesa) */
-.contenido-principal::before {
-  content: "";
-  position: absolute;
-  top: 120px;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-1.5px);
-  width: 3px;
-  background: linear-gradient(to bottom, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
-  z-index: 1;
-}
-
-/* H1 */
 .contenido-principal h1 {
   font-size: 2.5rem;
   margin-bottom: 40px;
@@ -129,6 +114,23 @@ header {
   text-align: center;
   position: relative;
   z-index: 2;
+}
+
+/* BLOQUE DE COLUMNAS CON LÍNEA VERTICAL */
+.bloque-columnas {
+  position: relative;
+}
+
+.bloque-columnas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-1.5px);
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  z-index: 1;
 }
 
 /* FILAS Y COLUMNAS */
@@ -164,7 +166,7 @@ header {
   margin: 0 auto;
 }
 
-/* LÍNEA HORIZONTAL ENTRE FILAS (más gruesa) */
+/* LÍNEA HORIZONTAL ENTRE FILAS */
 .fila:not(:last-of-type)::after {
   content: "";
   position: absolute;
@@ -175,9 +177,12 @@ header {
   background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
 }
 
-/* RESPONSIVE (texto arriba, imagen abajo) + líneas individuales */
+/* -------------------------
+   RESPONSIVE CONTENIDO
+------------------------- */
+
 @media (max-width: 800px) {
-  .contenido-principal::before {
+  .bloque-columnas::before {
     display: none;
   }
 
@@ -199,7 +204,6 @@ header {
     background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
   }
 
-  /* Orden correcto */
   .fila .columna.texto {
     order: 1;
   }
@@ -208,7 +212,11 @@ header {
     order: 2;
   }
 
-  /* Línea debajo del H1 */
+  /* ✅ Eliminar línea solo debajo de la segunda imagen (fila 2) */
+  .fila:nth-of-type(2) .columna.imagen::after {
+    display: none;
+  }
+
   .contenido-principal h1::after {
     content: "";
     display: block;
@@ -217,4 +225,71 @@ header {
     height: 3px;
     background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
   }
+}
+
+/* -------------------------
+   BLOQUES LLAMADA A LA ACCIÓN
+------------------------- */
+
+.bloque-llamada {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: #cccccc;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contenido-llamada {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.boton-azul {
+  background-color: #003366;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.boton-azul:hover {
+  background-color: #0051a3;
+}
+
+/* LÍNEAS DIFUMINADAS DE LOS BLOQUES */
+.bloque-llamada:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+}
+
+.bloque-llamada:first-of-type::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+}
+
+.bloque-llamada:last-of-type::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
 }
