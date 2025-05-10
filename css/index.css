@@ -9,6 +9,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* HEADER */
 header {
   width: 100%;
@@ -17,7 +23,6 @@ header {
   position: relative;
 }
 
-/* CONTENEDOR */
 .contenedor-header {
   max-width: 1200px;
   margin: 0 auto;
@@ -26,15 +31,12 @@ header {
   align-items: center;
 }
 
-/* LOGO */
 .logo img {
   height: 60px;
 }
 
-/* MENÚ NORMAL (escritorio) */
 .menu {
   margin-left: auto;
-  margin-right: -30px; /* ← Menú más a la derecha */
 }
 
 .menu ul {
@@ -48,11 +50,11 @@ header {
   text-decoration: none;
   font-weight: bold;
 }
+
 .menu a:hover {
   text-decoration: underline;
 }
 
-/* BOTÓN HAMBURGUESA */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -63,10 +65,8 @@ header {
   margin-left: auto;
 }
 
-/* ------------------------------
-   RESPONSIVE (tablets y móviles)
---------------------------------*/
-@media (max-width: 768px) {
+/* RESPONSIVE MENU */
+@media (max-width: 800px) {
   .menu-toggle {
     display: block;
   }
@@ -94,5 +94,127 @@ header {
 
   .menu {
     margin-left: 0;
+  }
+}
+
+/* -------------------------
+   CONTENIDO PRINCIPAL
+------------------------- */
+
+.contenido-principal {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* LÍNEA VERTICAL CENTRAL (más gruesa) */
+.contenido-principal::before {
+  content: "";
+  position: absolute;
+  top: 120px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-1.5px);
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  z-index: 1;
+}
+
+/* H1 */
+.contenido-principal h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003366;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* FILAS Y COLUMNAS */
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 40px;
+  position: relative;
+  min-height: 300px;
+  z-index: 2;
+}
+
+.columna {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.columna p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.columna.imagen img {
+  max-height: 250px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+/* LÍNEA HORIZONTAL ENTRE FILAS (más gruesa) */
+.fila:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+}
+
+/* RESPONSIVE (texto arriba, imagen abajo) + líneas individuales */
+@media (max-width: 800px) {
+  .contenido-principal::before {
+    display: none;
+  }
+
+  .fila {
+    flex-direction: column;
+  }
+
+  .fila:not(:last-of-type)::after {
+    display: none;
+  }
+
+  .columna::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  }
+
+  /* Orden correcto */
+  .fila .columna.texto {
+    order: 1;
+  }
+
+  .fila .columna.imagen {
+    order: 2;
+  }
+
+  /* Línea debajo del H1 */
+  .contenido-principal h1::after {
+    content: "";
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
   }
 }
