@@ -18,15 +18,18 @@ img {
 /* HEADER */
 header {
   width: 100%;
-  background-color: #003366;
+  background-color: #0200B0;
   padding: 20px 0;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .contenedor-header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
 }
@@ -37,6 +40,7 @@ header {
 
 .menu {
   margin-left: auto;
+  z-index: 1100;
 }
 
 .menu ul {
@@ -76,7 +80,7 @@ header {
     position: absolute;
     top: 80px;
     right: 0;
-    background-color: #003366;
+    background-color: #0200B0;
     border: 1px solid white;
     border-radius: 5px;
     margin-right: 10px;
@@ -103,14 +107,14 @@ header {
 
 .contenido-principal {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 150px auto 40px auto; /* ← espacio para dejar sitio al header fijo */
   padding: 0 20px;
 }
 
 .contenido-principal h1 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #003366;
+  color: #0200B0;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -129,7 +133,7 @@ header {
   left: 50%;
   transform: translateX(-1.5px);
   width: 3px;
-  background: linear-gradient(to bottom, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  background: linear-gradient(to bottom, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
   z-index: 1;
 }
 
@@ -174,7 +178,7 @@ header {
   left: 10%;
   width: 80%;
   height: 3px;
-  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
 }
 
 /* -------------------------
@@ -201,7 +205,7 @@ header {
     left: 10%;
     width: 80%;
     height: 3px;
-    background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+    background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
   }
 
   .fila .columna.texto {
@@ -223,7 +227,7 @@ header {
     margin: 20px auto 0 auto;
     width: 80%;
     height: 3px;
-    background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+    background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
   }
 }
 
@@ -247,7 +251,7 @@ header {
 }
 
 .boton-azul {
-  background-color: #003366;
+  background-color: #0200B0;
   color: white;
   padding: 15px 30px;
   font-size: 1.1rem;
@@ -271,7 +275,7 @@ header {
   left: 10%;
   width: 80%;
   height: 3px;
-  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
 }
 
 .bloque-llamada:first-of-type::after {
@@ -281,7 +285,7 @@ header {
   left: 10%;
   width: 80%;
   height: 3px;
-  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
 }
 
 .bloque-llamada:last-of-type::after {
@@ -291,5 +295,5 @@ header {
   left: 10%;
   width: 80%;
   height: 3px;
-  background: linear-gradient(to right, rgba(0, 51, 102, 0), #003366, rgba(0, 51, 102, 0));
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
 }
