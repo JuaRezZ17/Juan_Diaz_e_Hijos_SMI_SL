@@ -1,4 +1,8 @@
 /* RESET BÁSICO */
+html, body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -107,7 +111,7 @@ header {
 
 .contenido-principal {
   max-width: 1200px;
-  margin: 150px auto 40px auto; /* ← espacio para dejar sitio al header fijo */
+  margin: 150px auto 0 auto; /* ← espacio para dejar sitio al header fijo */
   padding: 0 20px;
 }
 
@@ -234,21 +238,34 @@ header {
 /* -------------------------
    BLOQUES LLAMADA A LA ACCIÓN
 ------------------------- */
-
 .bloque-llamada {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  background-color: #cccccc;
-  padding: 40px 20px;
-  text-align: center;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Elimina cualquier capa ::after o ::before */
+
+.bloque-llamada.presupuesto {
+  background-image: url("../img/presupuesto.jpg");
+}
+
+.bloque-llamada.cv {
+  background-image: url("../img/cv.jpg");
 }
 
 .contenido-llamada {
-  max-width: 1200px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
+
 
 .boton-azul {
   background-color: #0200B0;
@@ -259,41 +276,113 @@ header {
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
 .boton-azul:hover {
-  background-color: #0051a3;
+  background-color: #1d1df0;
 }
 
-/* LÍNEAS DIFUMINADAS DE LOS BLOQUES */
-.bloque-llamada:first-of-type::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 10%;
-  width: 80%;
-  height: 3px;
-  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
-}
-
-.bloque-llamada:first-of-type::after {
+.bloque-llamada:not(:last-of-type)::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 10%;
   width: 80%;
   height: 3px;
-  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
+  background: linear-gradient(to right, rgba(2, 0, 176, 0), #0200B0, rgba(2, 0, 176, 0));
+  z-index: 2;
 }
 
-.bloque-llamada:last-of-type::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 80%;
-  height: 3px;
-  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
+.bloque-llamada:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+.footer {
+  background-color: #0200B0;
+  color: white;
+  padding: 30px 20px 15px 20px;
+}
+
+.footer-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer .columna {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .columna h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.footer .columna p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Ajuste clave: forzamos que el iframe no cree desajustes */
+.footer .contenedor-mapa {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.footer .contenedor-mapa iframe {
+  width: 100%;
+  height: 150px;
+  border: none;
+  border-radius: 5px;
+  display: block;
+}
+
+.footer-inferior {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+.footer-inferior a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .footer-contenido {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .footer .columna {
+    width: 100%;
+  }
+
+  .footer .contenedor-mapa iframe {
+    height: 200px;
+  }
+}
+
+.footer .columna:nth-child(1) h3 {
+  margin-top: 7px;
+}
+
+.footer .columna:nth-child(2) h3 {
+  margin-top: 7px;
+}
+
+.footer .columna:nth-child(3) h3 {
+  margin-top: 7px;
 }
