@@ -1,6 +1,7 @@
 /* RESET BÁSICO */
 html, body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -385,4 +386,15 @@ header {
 
 .footer .columna:nth-child(3) h3 {
   margin-top: 7px;
+}
+
+.animada {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animada.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
