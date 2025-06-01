@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pide presupuesto | Juan Díaz e Hijos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/presupuesto.css">
+</head>
+<body>
+    <div id="inicio"></div>
+    <header>
+        <div class="contenedor-header">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de la empresa" />
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#inicio">Pide presupuesto</a></li>
+                    <li><a href="cv.html">Trabaja con nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenido-principal">
+        <h1>Pide tu presupuesto</h1>
+        <div class="bloque-columnas">
+            <section class="fila animada">
+                <div class="columna texto">
+                    <p>Juan Díaz e Hijos SMI SL cuenta con más de tres décadas de experiencia en el sector del mantenimiento integral. A lo largo de estos años, hemos evolucionado junto a nuestros clientes, adaptándonos a las exigencias del mercado y ofreciendo soluciones eficaces y profesionales. Nuestra historia está marcada por la seriedad en el trabajo, el compromiso con el cliente y una atención constante a los detalles.</p>
+                    <p>Aunque nuestra experiencia más consolidada está en el mantenimiento de estaciones de servicio, realizamos todo tipo de trabajos de reparación y mantenimiento a empresas y particulares. Desde arreglos puntuales hasta reformas completas, atendemos averías eléctricas, fontanería, carpintería, pintura y más, siempre con el mismo nivel de exigencia y compromiso.</p>
+                </div>
+                <div class="columna imagen">
+                    <img src="img/cartel.png" alt="Imagen 1">
+                </div>
+            </section>
+        </div>
+
+        <section class="formulario">
+            <h2>Solicita tu presupuesto personalizado</h2>
+            <form id="formulario" action="https://getform.io/f/adrggdka" method="POST" enctype="multipart/form-data">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="Nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="Correo" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="Teléfono" required>
+
+                <label for="mensaje">¿Qué necesitas que hagamos?</label>
+                <textarea id="mensaje" name="Avería" rows="5" required></textarea>
+
+
+                <div class="campo-formulario">
+                    <div class="etiqueta-con-icono">
+                        <label for="fotos">Adjuntar fotos (opcional)</label>
+                        <span class="icono-info">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="mensaje-info">Puedes añadir imágenes de la avería para que podamos evaluarla mejor.</span>
+                        </span>
+                    </div>
+                    <input type="file" id="fotos" name="fotos[]" multiple accept="image/*">
+                </div>
+
+                <button type="submit" class="boton-azul">Enviar solicitud</button>
+            </form>
+            <p id="mensaje-estado" style="display: none;"></p>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-contenido">
+            <div class="columna">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 08:00 - 17:00</p>
+                <p>Fines de semana y festivos: Cerrado</p>
+            </div>
+
+            <div class="columna">
+                <h3>Contacto</h3>
+                <p><i class="fa-solid fa-phone"></i> 928 25 98 87</p>
+                <p><i class="fa-solid fa-envelope"></i> juandiazehijos@movistar.es</p>
+                <p><i class="fa-solid fa-location-dot"></i> C. Maestro Rodo, 4, 35011 Las Palmas de Gran Canaria</p>
+            </div>
+
+            <div class="columna columna-mapa">
+                <h3>Ubicación</h3>
+                <div class="contenedor-mapa">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d523.0978891001048!2d-15.430142396934292!3d28.11697173996713!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4095754e66cb79%3A0xa2076dfb5d2c1e84!2sJuan%20D%C3%ADaz%20e%20Hijos%20Servicio%20de%20Mantenimiento%20Integral%2CS.l!5e0!3m2!1ses!2ses!4v1747478036499!5m2!1ses!2ses" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-inferior">
+            <a href="privacidad.html">Política de privacidad</a> |
+            <a href="cookies.html">Política de cookies</a> |
+            <a href="aviso.html">Aviso legal</a> |
+            <span>© Juan Díaz e Hijos SMI S.L</span>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/formulario.js"></script>
+</body>
+</html>
