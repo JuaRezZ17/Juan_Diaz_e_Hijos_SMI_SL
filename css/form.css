@@ -1,7 +1,11 @@
 /* GENERAL */
 html, body {
   overflow-x: hidden;
+  overflow-y: scroll;
   scroll-behavior: smooth;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -110,6 +114,7 @@ header {
   max-width: 1200px;
   margin: 150px auto 0 auto;
   padding: 0 20px;
+  flex: 1;
 }
 
 .contenido-principal h1 {
@@ -192,15 +197,15 @@ header {
     display: none;
   }
 
-  .columna::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    width: 80%;
-    height: 3px;
-    background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
-  }
+  .columna.texto::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
+    }
 
   .fila .columna.texto {
     order: 1;
@@ -212,15 +217,6 @@ header {
 
   .fila:nth-of-type(2) .columna.imagen::after {
     display: none;
-  }
-
-  .contenido-principal h1::after {
-    content: "";
-    display: block;
-    margin: 20px auto 0 auto;
-    width: 80%;
-    height: 3px;
-    background: linear-gradient(to right, rgba(0, 51, 102, 0), #0200B0, rgba(0, 51, 102, 0));
   }
 }
 
@@ -394,7 +390,8 @@ header {
 }
 
 .footer .columna p {
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
   font-size: 1rem;
 }
 

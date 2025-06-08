@@ -6,7 +6,7 @@
     <title>Trabaja con nosotros | Juan Díaz e Hijos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/presupuesto.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
     <div id="inicio"></div>
@@ -29,14 +29,51 @@
 
     <main class="contenido-principal">
         <h1>Trabaja con nosotros</h1>
-        <!-- Aquí irá el contenido principal que quieras incluir -->
+        <div class="bloque-columnas">
+            <section class="fila animada">
+                <div class="columna texto">
+                    <p>En Juan Díaz e Hijos SMI estamos en pleno crecimiento y buscamos personas comprometidas que quieran formar parte de nuestro equipo. Necesitamos tanto técnicos polivalentes (peones u oficiales con experiencia en electricidad, fontanería, carpintería u otros oficios), como personal administrativo que nos ayude a seguir ofreciendo un servicio ágil, eficaz y profesional. Si tienes iniciativa, sabes trabajar en equipo y te implicas en lo que haces, encajarás perfectamente con nuestra forma de trabajar.</p>
+                    <p>Todos los currículums serán tenidos en cuenta. Valoramos la actitud, la disposición y la experiencia de cada candidato, y creemos firmemente en la igualdad de oportunidades para todas las personas, sin importar su edad, género u origen. Si quieres unirte a una empresa seria y cercana, esta es tu oportunidad.</p>
+                </div>
+                <div class="columna imagen">
+                    <img src="img/cv.jpg" alt="Imagen 1">
+                </div>
+            </section>
+        </div>
+
+        <section class="formulario">
+            <h2>Envíanos tu currículum </h2>
+            <form id="formulario" action="https://getform.io/f/adrggdka" method="POST" enctype="multipart/form-data">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="Nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="Correo" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="Teléfono" required>
+
+                <label for="mensaje">Cuentanos algo sobre ti:</label>
+                <textarea id="mensaje" name="Avería" rows="5"></textarea>
+
+                <div class="campo-formulario">
+                    <div class="etiqueta-con-icono">
+                        <label for="fotos">Curriculum Vitae</label>
+                    </div>
+                    <input type="file" id="cv" name="cv[]" multiple accept="image/*">
+                </div>
+
+                <button type="submit" class="boton-azul">Enviar solicitud</button>
+            </form>
+            <p id="mensaje-estado" style="display: none;"></p>
+        </section>
     </main>
 
     <footer class="footer" id="contacto">
         <div class="footer-contenido">
             <div class="columna">
                 <h3>Horario</h3>
-                <p>Lunes a Viernes: 08:00 - 17:00</p>
+                <p>Lunes a Viernes: 08:00 - 16:00</p>
                 <p>Fines de semana y festivos: Cerrado</p>
             </div>
 
@@ -67,5 +104,6 @@
     </footer>
 
     <script src="js/index.js"></script>
+    <script src="js/formulario.js"></script>
 </body>
 </html>
