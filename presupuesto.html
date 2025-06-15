@@ -43,34 +43,20 @@
 
         <section class="formulario">
             <h2>Solicita tu presupuesto personalizado</h2>
-            <form id="formulario" action="https://getform.io/f/adrggdka" method="POST" enctype="multipart/form-data">
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="Nombre" required>
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="Correo" required>
-
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="Teléfono" required>
-
-                <label for="mensaje">¿Qué necesitas que hagamos?</label>
-                <textarea id="mensaje" name="Avería" rows="5" required></textarea>
-
-
-                <div class="campo-formulario">
-                    <div class="etiqueta-con-icono">
-                        <label for="fotos">Adjuntar fotos (opcional)</label>
-                        <span class="icono-info">
-                            <i class="fa-solid fa-circle-info"></i>
-                            <span class="mensaje-info">Puedes añadir imágenes de la avería para que podamos evaluarla mejor.</span>
-                        </span>
-                    </div>
-                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx,.odt">
-                </div>
-
-                <button type="submit" class="boton-azul">Enviar solicitud</button>
-            </form>
-            <p id="mensaje-estado" style="display: none;"></p>
+            <iframe
+                id="JotFormIFrame-251652506027048"
+                title="Presupuestos"
+                onload="window.parent.scrollTo(0,0)"
+                allowtransparency="true"
+                allow="geolocation; microphone; camera; fullscreen; payment"
+                src="https://form.jotform.com/251652506027048"
+                frameborder="0"
+                style="min-width:100%;max-width:100%;height:539px;border:none;"
+                scrolling="no"
+            >
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-251652506027048']", "https://form.jotform.com/")</script>
         </section>
     </main>
 
@@ -109,6 +95,5 @@
     </footer>
 
     <script src="js/index.js"></script>
-    <script src="js/formulario.js"></script>
 </body>
 </html>
