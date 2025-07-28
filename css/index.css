@@ -220,10 +220,6 @@ header {
   .fila .columna.imagen {
     order: 2;
   }
-
-  .fila:nth-of-type(2) .columna.imagen::after {
-    display: none;
-  }
 }
 
 .bloque-llamada {
@@ -266,17 +262,6 @@ header {
 
 .boton-azul:hover {
   background-color: #1d1df0;
-}
-
-.bloque-llamada:not(:last-of-type)::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  width: 80%;
-  height: 3px;
-  background: linear-gradient(to right, rgba(2, 0, 176, 0), #0200B0, rgba(2, 0, 176, 0));
-  z-index: 2;
 }
 
 .bloque-llamada:last-of-type {

@@ -202,7 +202,7 @@ header {
     display: none;
   }
 
-  .columna.texto::after {
+  .columna::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -218,10 +218,6 @@ header {
 
   .fila .columna.imagen {
     order: 2;
-  }
-
-  .fila:nth-of-type(2) .columna.imagen::after {
-    display: none;
   }
 }
 
