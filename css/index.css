@@ -236,11 +236,13 @@ header {
 }
 
 .bloque-llamada.presupuesto {
-  background-image: url("../img/presupuesto_1.jpg");
+  background-image: url("../img/presupuesto_1.png");
+  alt: "Presupuesto";
 }
 
 .bloque-llamada.cv {
-  background-image: url("../img/cv_1.jpg");
+  background-image: url("../img/cv_1.png");
+  alt: "Equipo";
 }
 
 .contenido-llamada {
